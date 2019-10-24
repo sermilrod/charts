@@ -8,6 +8,7 @@ metadata:
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
   name: {{ template "k8s-prometheus-adapter.name" . }}-metrics
+  namespace: {{ .Release.Namespace | quote }}
 rules:
 - apiGroups:
   - ""
